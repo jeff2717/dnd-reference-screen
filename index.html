@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.5e DM Screen</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: #e0e0e0; padding: 20px; }
+        .search-box { width: 100%; padding: 12px; font-size: 18px; border-radius: 8px; border: none; margin-bottom: 20px; background: #333; color: #fff; }
+        
+        #glossaryContainer { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 20px; 
+            align-items: start;
+        }
+
+        /* Styling for the Collapsible Sections */
+        details {
+            background: #222;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #444;
+        }
+
+        summary { 
+            color: #d4af37; 
+            text-transform: uppercase; 
+            font-size: 14px; 
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px;
+            list-style: none; /* Removes default arrow */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Adds a custom plus/minus indicator */
+        summary::after { content: '▼'; font-size: 10px; color: #888; }
+        details[open] summary::after { content: '▲'; }
+
+        .card { background: #2a2a2a; border-left: 4px solid #d4af37; padding: 15px; margin-top: 10px; margin-bottom: 10px; border-radius: 4px; }
+        .term { color: #d4af37; font-size: 18px; font-weight: bold; margin: 0; }
+        .desc { margin-top: 8px; line-height: 1.4; font-size: 14px; }
+        b { color: #fff; }
+    </style>
+</head>
+<body>
+    <h1>D&D 5.5e DM/Reference Screen</h1>
+	<div style="display: flex; flex-wrap: wrap; gap: 15px; max-width: 1400px; margin: 20px auto; padding: 20px; background: #1a1a1a; border: 2px solid #d4af37; border-radius: 10px; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+
+    <!-- Column 1: Core Roll Formulas -->
+    <div style="flex: 1; min-width: 250px;">
+        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Standard Rolls</h4>
+        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
+            <li><b>To Hit:</b> d20 + Ability Mod + Prof. Bonus</li>
+            <li><b>Tool/Skill:</b> d20 + Ability Mod + Prof. Bonus</li>
+            <li><b>Melee Damage:</b> Die + Weapon Ability Mod</li>
+            <li><b>Ranged Damage:</b> Die + Weapon Ability Mod</li>
+            <li><b>Spell Save DC:</b> 8 + Ability Mod + Prof. Bonus</li>
+        </ul>
+    </div>
+
+    <!-- Column 2: Cover & Visibility -->
+    <div style="flex: 1; min-width: 250px;">
+        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Cover & Stealth</h4>
+        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
+            <li><b>Half Cover:</b> +2 bonus to AC and Dex Saves</li>
+            <li><b>3/4 Cover:</b> +5 bonus to AC and Dex Saves</li>
+            <li><b>Total Cover:</b> Cannot be targeted directly</li>
+            <li><b>Hide Action:</b> DC 15 Stealth (Check vs Passive Percep)</li>
+            <li><b>Invisible:</b> Adv. on attacks / Disadv. for attackers</li>
+        </ul>
+    </div>
+
+    <!-- Column 3: Movement & Jumping -->
+    <div style="flex: 1; min-width: 250px;">
+        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Athletics (Jumping)</h4>
+        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
+            <li><b>Long Jump:</b> Up to <b>Strength Score</b> (feet)</li>
+            <li><b>High Jump:</b> <b>3 + Strength Mod</b> (feet)</li>
+            <li><b>Running Start:</b> Requires 10ft movement first</li>
+            <li><b>Standing Jump:</b> Half distance (Long or High)</li>
+            <li><b>Difficult Terrain:</b> 1 extra ft movement per ft moved</li>
+        </ul>
+    </div>
+	
+	<!-- Column 4: Vision & Light -->
+    <div style="flex: 1; min-width: 250px;">
+        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Vision & Light</h4>
+        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
+            <li><b>Bright Light:</b> Normal vision for most creatures.</li>
+            <li><b>Dim Light:</b> Area is <b>Lightly Obscured</b>.</li>
+            <li><b>Darkness:</b> Area is <b>Heavily Obscured</b>.</li>
+            <li><b>Lightly Obscured:</b> Disadv. on WIS (Perception) checks.</li>
+            <li><b>Heavily Obscured:</b> Creatures effectively have <b>Blinded</b> condition.</li>
+        </ul>
+    </div>
+	
+	<!-- Column 5: Death & Stabilization -->
+    <div style="flex: 1; min-width: 250px;">
+        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Death & Stabilizing</h4>
+        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
+            <li><b>Death Save:</b> 10+ is success; 9 or less is failure.</li>
+            <li><b>Critical Success:</b> Rolling a 20 grants 1 HP immediately.</li>
+            <li><b>Critical Failure:</b> Rolling a 1 counts as 2 failures.</li>
+            <li><b>Stabilizing:</b> DC 10 WIS (Medicine) check as an action.</li>
+            <li><b>Stable:</b> 0 HP but no more saves; regains 1 HP in 1d4 hours.</li>
+            <li><b>Instant Death:</b> Damage exceeds HP max by your total HP max.</li>
+        </ul>
+    </div>
+</div>
+    <input type="text" id="searchInput" class="search-box" placeholder="Search weapons, conditions, or other rules...">
+
+    <div id="glossaryContainer"></div>
+
+    <script>
+        const data = [
+			// Actions
+			{ "term": "Attack (Weapon)", "category": "Actions", "description": "1 attack roll. Equip/unequip 1 weapon before or after attack.", "id": "action_attack_weapon" },
+			{ "term": "Attack (Unarmed Strike)", "category": "Actions", "description": "Melee Attack Roll vs AC. Hit: 1 + STR Bludgeoning damage.", "id": "action_attack_unarmed" },
+			{ "term": "Grapple (Unarmed Strike)", "category": "Actions", "description": "Target is max 1 size larger + you have free hand. Target STR/DEX save vs DC (8+STR+PB) or Grappled. DC applies to escape attempts.", "id": "action_grapple" },
+			{ "term": "Shove (Unarmed Strike)", "category": "Actions", "description": "Target is max 1 size larger. Target STR/DEX save vs DC (8+STR+PB) or pushed 5ft away or knocked Prone.", "id": "action_shove" },
+			{ "term": "Dash", "category": "Actions", "description": "Gain extra movement equal to your Speed.", "id": "action_dash" },
+			{ "term": "Disengage", "category": "Actions", "description": "Movement does not provoke Opportunity Attacks this turn.", "id": "action_disengage" },
+			{ "term": "Dodge", "category": "Actions", "description": "Attacks against have Disadv; Adv on DEX saves. Ends if Speed 0 or Incapacitated.", "id": "action_dodge" },
+			{ "term": "Help", "category": "Actions", "description": "Give Adv to ally on check (proficient skill/tool) or next attack roll.", "id": "action_help" },
+			{ "term": "Hide", "category": "Actions", "description": "DC 15 Stealth. Success = Invisible. Ends if loud, found, or attack/spell cast.", "id": "action_hide" },
+			{ "term": "Influence", "category": "Actions", "description": "Encourage creature. DC 15 or target's INT score.", "id": "action_influence" },
+			{ "term": "Magic", "category": "Actions", "description": "Cast spell or use magical item/feature. Used to maintain long Concentration.", "id": "action_magic" },
+			{ "term": "Ready", "category": "Actions", "description": "Prepare Action/Move as Reaction to a trigger. Requires Concentration for spells.", "id": "action_ready" },
+			{ "term": "Search", "category": "Actions", "description": "Make a WIS check to discern something.", "id": "action_search" },
+			{ "term": "Study", "category": "Actions", "description": "Make an INT check to recall information.", "id": "action_study" },
+			{ "term": "Utilize", "category": "Actions", "description": "Use an object requiring an action. Includes 1 free object interaction per turn.", "id": "action_utilize" },
+
+             // Conditions
+            { "term": "Attached", "category": "Conditions", "description": "Moves with target. Ended by any effect that ends Grappled. DC to remove is its Remove DC.", "id": "condition_attached" },
+            { "term": "Bleeding", "category": "Conditions", "description": "Loses specified HP at start of turn. Ends with healing or DC 12 Medicine check.", "id": "condition_bleeding" },
+            { "term": "Blinded", "category": "Conditions", "description": "Can't see; fails sight checks. Attackers have Advantage; its own attacks have Disadvantage.", "id": "condition_blinded" },
+            { "term": "Burning", "category": "Conditions", "description": "Takes Fire damage at start of turn. Smother with an action or use Cold damage.", "id": "condition_burning" },
+            { "term": "Charmed", "category": "Conditions", "description": "Cannot attack charmer; treats them as ally. Charmer has Advantage on social checks.", "id": "condition_charmed" },
+            { "term": "Dazed", "category": "Conditions", "description": "Can only move, use an Action, OR use a Bonus Action on its turn.", "id": "condition_dazed" },
+            { "term": "Deafened", "category": "Conditions", "description": "Can't hear; fails hearing checks. Verbal spells may fail on a d20 roll of 1-10.", "id": "condition_deafened" },
+            { "term": "Exhaustion", "category": "Conditions", "description": "6 Levels: 1-Disadv. checks, 2-Speed halved, 3-Disadv. attack/save, 4-HP max halved, 5-Speed 0, 6-Death.", "id": "condition_exhaustion" },
+            { "term": "Frightened", "category": "Conditions", "description": "Disadv. on checks/attacks while source is in sight. Cannot move closer.", "id": "condition_frightened" },
+            { "term": "Grappled", "category": "Conditions", "description": "Speed 0. Creatures 1+ size larger can escape as Bonus Action. Grappler moves at half speed.", "id": "condition_grappled" },
+            { "term": "Incapacitated", "category": "Conditions", "description": "Cannot take Actions, Bonus Actions, or Reactions.", "id": "condition_incapacitated" },
+            { "term": "Invisible", "category": "Conditions", "description": "Heavily Obscured. Adv. on Stealth. Attacks against have Disadv.", "id": "condition_invisible" },
+            { "term": "Paralyzed", "category": "Conditions", "description": "Incapacitated; can't move; fails saves. Hits within 5ft are automatic Critical Hits.", "id": "condition_paralyzed" },
+            { "term": "Petrified", "category": "Conditions", "description": "Transformed to stone; weight x10. Incapacitated. Resistance to all damage.", "id": "condition_petrified" },
+            { "term": "Poisoned", "category": "Conditions", "description": "The creature has Disadvantage on attack rolls and ability checks.", "id": "condition_poisoned" },
+            { "term": "Prone", "category": "Conditions", "description": "Crawl at half speed. Stand costs half movement. Flying: fall 500ft immediately.", "id": "condition_prone" },
+            { "term": "Restrained", "category": "Conditions", "description": "Speed 0; Disadv. on DEX saves. Attacks against have Adv.", "id": "condition_restrained" },
+            { "term": "Stunned", "category": "Conditions", "description": "Incapacitated; can't move. Fails STR/DEX saves. Attacks against have Adv.", "id": "condition_stunned" },
+            { "term": "Unconscious", "category": "Conditions", "description": "Incapacitated; unaware. Hits within 5ft are automatic Critical Hits.", "id": "condition_unconscious" },
+            { "term": "Swallowed", "category": "Conditions", "description": "Restrained and has Total Cover. Takes acid damage at start of swallower's turns.", "id": "condition_swallowed" },
+            { "term": "Possessed", "category": "Conditions", "description": "Body controlled by entity. Host is typically Incapacitated and unaware.", "id": "condition_possessed" },
+
+			
+            // Masteries 
+            { "term": "Cleave", "category": "Weapon Mastery", "description": "Once per turn, hitting a creature allows a second attack against a different creature within 5 feet and within reach.", "id": "mastery_cleave" },
+            { "term": "Graze", "category": "Weapon Mastery", "description": "If your attack misses, you still deal damage equal to the ability modifier used for the attack roll.", "id": "mastery_graze" },
+            { "term": "Nick", "category": "Weapon Mastery", "description": "Extra attacks with Light weapons can be part of the Initial Action instead of a Bonus Action.", "id": "mastery_nick" },
+            { "term": "Push", "category": "Weapon Mastery", "description": "Hit creature is pushed up to 10 feet away. Target must be no more than one size larger.", "id": "mastery_push" },
+            { "term": "Sap", "category": "Weapon Mastery", "description": "Hit creature has Disadvantage on its next attack roll before your next turn.", "id": "mastery_sap" },
+            { "term": "Slow", "category": "Weapon Mastery", "description": "Reduce target Speed by 10 feet until your next turn. Does not stack.", "id": "mastery_slow" },
+            { "term": "Topple", "category": "Weapon Mastery", "description": "Hit creature must succeed on a CON Save or be knocked Prone.", "id": "mastery_topple" },
+            { "term": "Vex", "category": "Weapon Mastery", "description": "Advantage on your next attack against that creature before the end of your next turn.", "id": "mastery_vex" },
+            
+           // Artisan's Tools
+			{ "term": "Alchemist's Supplies", "category": "Artisan's Tools", "description": "INT. 50 GP. Identify substance (DC 15) or start a fire (DC 15).", "id": "tool_alchemists_supplies" },
+			{ "term": "Brewer's Supplies", "category": "Artisan's Tools", "description": "INT. 20 GP. Detect poisoned drink (DC 15) or identify alcohol (DC 10).", "id": "tool_brewers_supplies" },
+			{ "term": "Calligrapher's Supplies", "category": "Artisan's Tools", "description": "DEX. 10 GP. Guard against forgery (DC 15) or scribe spell scrolls.", "id": "tool_calligraphers_supplies" },
+			{ "term": "Carpenter's Tools", "category": "Artisan's Tools", "description": "STR. 8 GP. Seal or pry open a door/container (DC 20).", "id": "tool_carpenters_tools" },
+			{ "term": "Cartographer's Tools", "category": "Artisan's Tools", "description": "WIS. 15 GP. Draft a map of a small area (DC 15).", "id": "tool_cartographers_tools" },
+			{ "term": "Cobbler's Tools", "category": "Artisan's Tools", "description": "DEX. 5 GP. Modify footwear for Adv. on next Acrobatics check (DC 10).", "id": "tool_cobblers_tools" },
+			{ "term": "Cook's Utensils", "category": "Artisan's Tools", "description": "WIS. 1 GP. Improve flavor (DC 10) or detect spoiled food (DC 15).", "id": "tool_cooks_utensils" },
+			{ "term": "Glassblower's Tools", "category": "Artisan's Tools", "description": "INT. 30 GP. Discern what a glass object held within 24h (DC 15).", "id": "tool_glassblowers_tools" },
+			{ "term": "Jeweller's Tools", "category": "Artisan's Tools", "description": "INT. 25 GP. Discern a gem's value (DC 15).", "id": "tool_jewelers_tools" },
+			{ "term": "Leatherworker's Tools", "category": "Artisan's Tools", "description": "DEX. 5 GP. Add a design to a leather item (DC 10).", "id": "tool_leatherworkers_tools" },
+			{ "term": "Mason's Tools", "category": "Artisan's Tools", "description": "STR. 10 GP. Chisel a symbol or hole in stone (DC 10).", "id": "tool_masons_tools" },
+			{ "term": "Painter's Supplies", "category": "Artisan's Tools", "description": "WIS. 10 GP. Paint a recognizable image of something seen (DC 10).", "id": "tool_painters_supplies" },
+			{ "term": "Potter's Tools", "category": "Artisan's Tools", "description": "INT. 10 GP. Discern what a ceramic object held within 24h (DC 15).", "id": "tool_potters_tools" },
+			{ "term": "Smith's Tools", "category": "Artisan's Tools", "description": "STR. 20 GP. Pry open a door or container (DC 20).", "id": "tool_smiths_tools" },
+			{ "term": "Tinker's Tools", "category": "Artisan's Tools", "description": "DEX. 50 GP. Assemble a temporary Tiny scrap item (DC 20).", "id": "tool_tinkers_tools" },
+			{ "term": "Weaver's Tools", "category": "Artisan's Tools", "description": "DEX. 1 GP. Mend a tear or sew a Tiny design (DC 10).", "id": "tool_weavers_tools" },
+			{ "term": "Woodcarver's Tools", "category": "Artisan's Tools", "description": "DEX. 1 GP. Carve a pattern in wood (DC 10).", "id": "tool_woodcarvers_tools" },
+
+			// Other Tools
+			{ "term": "Disguise Kit", "category": "Other Tools", "description": "CHA. 25 GP. Apply makeup (DC 10).", "id": "tool_disguise_kit" },
+			{ "term": "Forgery Kit", "category": "Other Tools", "description": "DEX. 15 GP. Mimic handwriting (DC 15) or duplicate a wax seal (DC 20).", "id": "tool_forgery_kit" },
+			{ "term": "Gaming Set", "category": "Other Tools", "description": "Varies. Discern cheating (DC 10) or win the game (DC 20).", "id": "tool_gaming_set" },
+			{ "term": "Herbalism Kit", "category": "Other Tools", "description": "INT. 5 GP. Identify a plant (DC 10) or craft Healing Potions.", "id": "tool_herbalism_kit" },
+			{ "term": "Musical Instruments", "category": "Other Tools", "description": "CHA. Play a known tune (DC 10) or improvise (DC 15).", "id": "tool_musical_instruments" },
+			{ "term": "Navigator's Tools", "category": "Other Tools", "description": "WIS. 25 GP. Plot a course (DC 10) or determine position (DC 15).", "id": "tool_navigators_tools" },
+			{ "term": "Poisoner's Kit", "category": "Other Tools", "description": "INT. 50 GP. Detect a poisoned object (DC 10).", "id": "tool_poisoners_kit" },
+			{ "term": "Thieves' Tools", "category": "Other Tools", "description": "DEX. 25 GP. Pick a lock (DC 15) or disarm a trap (DC 10).", "id": "tool_thieves_tools" },
+
+			
+            // Magic
+            { "term": "Concentration", "category": "Magic", "description": "CON save on damage (DC 10 or half damage). Ended by Incapacitated.", "id": "mechanic_concentration_check" },
+            { "term": "Ritual Casting", "category": "Magic", "description": "Cast spell without slot. Normal time + 10 minutes.", "id": "mechanic_ritual_casting" },
+            { "term": "Spell Scroll", "category": "Magic", "description": "Cast spell from class list. If higher level, Ability check (DC 10 + lvl).", "id": "item_spell_scroll" },
+            
+            // Cover
+            { "term": "Half Cover", "category": "Cover", "description": "+2 bonus to AC and DEX saves.", "id": "mechanic_cover_half" },
+            { "term": "Three-Quarters Cover", "category": "Cover", "description": "+5 bonus to AC and DEX saves.", "id": "mechanic_cover_three_quarters" },
+            { "term": "Total Cover", "category": "Cover", "description": "Cannot be targeted directly by attacks or spells.", "id": "mechanic_cover_total" },
+			
+			// Weapons
+            // Simple Melee
+			{ "term": "Greatclub", "category": "Simple Melee", "description": "1d8 Bludgeoning. Properties: 2-handed. Mastery: Push.", "id": "weapon_greatclub" },
+			{ "term": "Javelin", "category": "Simple Melee", "description": "1d6 Piercing. Properties: Thrown (30/120). Mastery: Slow.", "id": "weapon_javelin" },
+			{ "term": "Light Hammer", "category": "Simple Melee", "description": "1d4 Bludgeoning. Properties: Light, Thrown (20/60). Mastery: Nick.", "id": "weapon_light_hammer" },
+			{ "term": "Mace", "category": "Simple Melee", "description": "1d6 Bludgeoning. Mastery: Sap.", "id": "weapon_mace" },
+			{ "term": "Sickle", "category": "Simple Melee", "description": "1d4 Slashing. Properties: Light. Mastery: Nick.", "id": "weapon_sickle" },
+			{ "term": "Spear", "category": "Simple Melee", "description": "1d6 Piercing. Properties: Thrown (20/60), Versatile (1d8). Mastery: Sap.", "id": "weapon_spear" },
+
+			// Simple Ranged
+			{ "term": "Light Crossbow", "category": "Simple Ranged", "description": "1d8 Piercing. Properties: Ammunition (80/320), Loading, 2-handed. Mastery: Slow.", "id": "weapon_light_crossbow" },
+			{ "term": "Sling", "category": "Simple Ranged", "description": "1d4 Bludgeoning. Properties: Ammunition (30/120). Mastery: Slow.", "id": "weapon_sling" },
+
+			// Martial Melee
+			{ "term": "Flail", "category": "Martial Melee", "description": "1d8 Bludgeoning. Mastery: Sap.", "id": "weapon_flail" },
+			{ "term": "Glaive", "category": "Martial Melee", "description": "1d10 Slashing. Properties: Heavy, Reach, 2-handed. Mastery: Graze.", "id": "weapon_glaive" },
+			{ "term": "Halberd", "category": "Martial Melee", "description": "1d10 Slashing. Properties: Heavy, Reach, 2-handed. Mastery: Cleave.", "id": "weapon_halberd" },
+			{ "term": "Lance", "category": "Martial Melee", "description": "1d10 Piercing. Properties: Heavy, Reach, 2-handed (unless mounted). Mastery: Topple.", "id": "weapon_lance" },
+			{ "term": "Maul", "category": "Martial Melee", "description": "2d6 Bludgeoning. Properties: Heavy, 2-handed. Mastery: Topple.", "id": "weapon_maul" },
+			{ "term": "Morningstar", "category": "Martial Melee", "description": "1d8 Piercing. Mastery: Sap.", "id": "weapon_morningstar" },
+			{ "term": "Pike", "category": "Martial Melee", "description": "1d10 Piercing. Properties: Heavy, Reach, 2-handed. Mastery: Push.", "id": "weapon_pike" },
+			{ "term": "Scimitar", "category": "Martial Melee", "description": "1d6 Slashing. Properties: Finesse, Light. Mastery: Nick.", "id": "weapon_scimitar" },
+			{ "term": "Shortsword", "category": "Martial Melee", "description": "1d6 Piercing. Properties: Finesse, Light. Mastery: Vex.", "id": "weapon_shortsword" },
+			{ "term": "Trident", "category": "Martial Melee", "description": "1d8 Piercing. Properties: Thrown (20/60), Versatile (1d10). Mastery: Topple.", "id": "weapon_trident" },
+			{ "term": "Warhammer", "category": "Martial Melee", "description": "1d8 Bludgeoning. Properties: Versatile (1d10). Mastery: Push.", "id": "weapon_warhammer" },
+			{ "term": "War Pick", "category": "Martial Melee", "description": "1d8 Piercing. Properties: Versatile (1d10). Mastery: Sap.", "id": "weapon_war_pick" },
+			{ "term": "Whip", "category": "Martial Melee", "description": "1d4 Slashing. Properties: Finesse, Reach. Mastery: Slow.", "id": "weapon_whip" },
+
+			// Martial Ranged
+			{ "term": "Blowgun", "category": "Martial Ranged", "description": "1 Piercing. Properties: Ammunition (25/100), Loading. Mastery: Vex.", "id": "weapon_blowgun" },
+			{ "term": "Hand Crossbow", "category": "Martial Ranged", "description": "1d6 Piercing. Properties: Ammunition (30/120), Light, Loading. Mastery: Vex.", "id": "weapon_hand_crossbow" },
+			{ "term": "Heavy Crossbow", "category": "Martial Ranged", "description": "1d10 Piercing. Properties: Ammunition (100/400), Heavy, Loading, 2-handed. Mastery: Push.", "id": "weapon_heavy_crossbow" },
+			{ "term": "Longbow", "category": "Martial Ranged", "description": "1d8 Piercing. Properties: Ammunition (150/600), Heavy, 2-handed. Mastery: Slow.", "id": "weapon_longbow" },
+			{ "term": "Pistol", "category": "Martial Ranged", "description": "1d10 Piercing. Properties: Ammunition (30/90), Loading. Mastery: Vex.", "id": "weapon_pistol" },
+			
+			//Light Sources
+			{ "term": "Candle", "category": "Light Sources", "description": "1 hr. Bright Light 5ft radius, Dim Light +5ft.", "id": "light_candle" },
+			{ "term": "Lamp", "category": "Light Sources", "description": "6 hrs. Bright Light 15ft radius, Dim Light +15ft.", "id": "light_lamp" },
+			{ "term": "Lantern, Bullseye", "category": "Light Sources", "description": "6 hrs. 60ft cone of Bright Light, Dim Light +60ft.", "id": "light_lantern_bullseye" },
+			{ "term": "Lantern, Hooded", "category": "Light Sources", "description": "6 hrs. Bright Light 30ft radius, Dim Light +30ft.", "id": "light_lantern_hooded" },
+			{ "term": "Torch", "category": "Light Sources", "description": "1 hr. Bright Light 20ft radius, Dim Light +20ft.", "id": "light_torch" },
+			{ "term": "Continual Flame", "category": "Light Sources", "description": "Permanent. Bright Light 20ft radius, Dim Light +20ft.", "id": "light_continual_flame" },
+
+			// Appendix B Rules
+			{ "term": "Minion Trait", "category": "Conflux Appendix B Rules", "description": "Drops to 0 HP if damaged by attack or failed save.", "id": "mechanic_minion_trait" },
+			{ "term": "Group Attack", "category": "Conflux Appendix B Rules", "description": "Up to 5 minions. +1 to hit for each beyond the first.", "id": "mechanic_group_attack" },
+			{ "term": "Overkill Attack", "category": "Conflux Appendix B Rules", "description": "Melee damage exceeding minion HP carries over to another within reach.", "id": "mechanic_overkill_attack" },
+			{ "term": "Swarm Movement", "category": "Conflux Appendix B Rules", "description": "Moves through any space a single member fits in without squeezing.", "id": "mechanic_swarm_movement" },
+			{ "term": "Giant Resistance", "category": "Conflux Appendix B Rules", "description": "Huge+ creatures resist attacks made without Advantage.", "id": "mechanic_giant_resistance" },
+			{ "term": "Climbing on Creatures", "category": "Conflux Appendix B Rules", "description": "STR (Athletics) vs Passive Athletics of creature 2+ sizes larger.", "id": "action_climb_onto_creature" }
+            
+            
+        ];
+
+        const container = document.getElementById('glossaryContainer');
+        const searchInput = document.getElementById('searchInput');
+
+        function render(items) {
+            const groups = items.reduce((acc, item) => {
+                if (!acc[item.category]) acc[item.category] = [];
+                acc[item.category].push(item);
+                return acc;
+            }, {});
+
+            container.innerHTML = Object.keys(groups).map(category => `
+                <details  class="category-section">
+                    <summary>${category}</summary>
+                    ${groups[category].map(item => `
+                        <div class="card">
+                            <p class="term">${item.term}</p>
+                            <div class="desc">${item.description}</div>
+                        </div>
+                    `).join('')}
+                </details>
+            `).join('');
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = data.filter(item => 
+                item.term.toLowerCase().includes(term) || 
+                item.category.toLowerCase().includes(term) ||
+                item.description.toLowerCase().includes(term)
+            );
+            render(filtered);
+        });
+
+        render(data);
+    </script>
+</body>
+</html>
