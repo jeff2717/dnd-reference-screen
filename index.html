@@ -48,69 +48,78 @@
 </head>
 <body>
     <h1>D&D 5.5e DM/Reference Screen</h1>
-	<div style="display: flex; flex-wrap: wrap; gap: 15px; max-width: 1400px; margin: 20px auto; padding: 20px; background: #1a1a1a; border: 2px solid #d4af37; border-radius: 10px; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+	<!-- Drawer 1: Core Rules Reference -->
+<details open style="max-width: 1400px; margin: 10px auto; background: #1a1a1a; border: 1px solid #d4af37; border-radius: 8px; color: #e0e0e0; font-family: sans-serif;">
+    <summary style="padding: 15px; cursor: pointer; color: #d4af37; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; outline: none;">
+        + Core Rules Reference (Rolls, Cover, Vision, Death)
+    </summary>
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; padding: 20px; border-top: 1px solid #333;">
+        
+        <!-- Column 1: Core Roll Formulas -->
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #444; padding-bottom: 5px;">Standard Rolls</h4>
+            <ul style="list-style: none; padding: 0; font-size: 0.9em; line-height: 1.8;">
+                <li><b>To Hit:</b> d20 + Ability Mod + Prof. Bonus</li>
+                <li><b>Tool/Skill:</b> d20 + Ability Mod + Prof. Bonus</li>
+                <li><b>Melee Damage:</b> Die + Weapon Ability Mod</li>
+                <li><b>Ranged Damage:</b> Die + Weapon Ability Mod</li>
+                <li><b>Spell Save DC:</b> 8 + Ability Mod + Prof. Bonus</li>
+            </ul>
+        </div>
 
-    <!-- Column 1: Core Roll Formulas -->
-    <div style="flex: 1; min-width: 250px;">
-        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Standard Rolls</h4>
-        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
-            <li><b>To Hit:</b> d20 + Ability Mod + Prof. Bonus</li>
-            <li><b>Tool/Skill:</b> d20 + Ability Mod + Prof. Bonus</li>
-            <li><b>Melee Damage:</b> Die + Weapon Ability Mod</li>
-            <li><b>Ranged Damage:</b> Die + Weapon Ability Mod</li>
-            <li><b>Spell Save DC:</b> 8 + Ability Mod + Prof. Bonus</li>
-        </ul>
-    </div>
+        <!-- Column 2: Cover & Visibility -->
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #444; padding-bottom: 5px;">Cover & Stealth</h4>
+            <ul style="list-style: none; padding: 0; font-size: 0.9em; line-height: 1.8;">
+                <li><b>Half Cover:</b> +2 bonus to AC and Dex Saves</li>
+                <li><b>3/4 Cover:</b> +5 bonus to AC and Dex Saves</li>
+                <li><b>Total Cover:</b> Cannot be targeted directly</li>
+                <li><b>Hide Action:</b> DC 15 Stealth (Check vs Passive Percep)</li>
+                <li><b>Invisible:</b> Adv. on attacks / Disadv. for attackers</li>
+            </ul>
+        </div>
 
-    <!-- Column 2: Cover & Visibility -->
-    <div style="flex: 1; min-width: 250px;">
-        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Cover & Stealth</h4>
-        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
-            <li><b>Half Cover:</b> +2 bonus to AC and Dex Saves</li>
-            <li><b>3/4 Cover:</b> +5 bonus to AC and Dex Saves</li>
-            <li><b>Total Cover:</b> Cannot be targeted directly</li>
-            <li><b>Hide Action:</b> DC 15 Stealth (Check vs Passive Percep)</li>
-            <li><b>Invisible:</b> Adv. on attacks / Disadv. for attackers</li>
-        </ul>
-    </div>
+        <!-- Column 3: Movement & Jumping -->
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #444; padding-bottom: 5px;">Athletics (Jumping)</h4>
+            <ul style="list-style: none; padding: 0; font-size: 0.9em; line-height: 1.8;">
+                <li><b>Long Jump:</b> Up to <b>Strength Score</b> (feet)</li>
+                <li><b>High Jump:</b> <b>3 + Strength Mod</b> (feet)</li>
+                <li><b>Running Start:</b> Requires 10ft movement first</li>
+                <li><b>Standing Jump:</b> Half distance (Long or High)</li>
+                <li><b>Difficult Terrain:</b> 1 extra ft movement per ft moved</li>
+            </ul>
+        </div>
 
-    <!-- Column 3: Movement & Jumping -->
-    <div style="flex: 1; min-width: 250px;">
-        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Athletics (Jumping)</h4>
-        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
-            <li><b>Long Jump:</b> Up to <b>Strength Score</b> (feet)</li>
-            <li><b>High Jump:</b> <b>3 + Strength Mod</b> (feet)</li>
-            <li><b>Running Start:</b> Requires 10ft movement first</li>
-            <li><b>Standing Jump:</b> Half distance (Long or High)</li>
-            <li><b>Difficult Terrain:</b> 1 extra ft movement per ft moved</li>
-        </ul>
+        <!-- Column 4: Vision & Light -->
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #444; padding-bottom: 5px;">Vision & Light</h4>
+            <ul style="list-style: none; padding: 0; font-size: 0.9em; line-height: 1.8;">
+                <li><b>Bright Light:</b> Normal vision.</li>
+                <li><b>Dim Light:</b> Area is <b>Lightly Obscured</b>.</li>
+                <li><b>Darkness:</b> Area is <b>Heavily Obscured</b>.</li>
+                <li><b>Lightly Obscured:</b> Disadv. on WIS (Perception).</li>
+                <li><b>Heavily Obscured:</b> Effectively <b>Blinded</b>.</li>
+                <li><b>Blinded:</b> Auto-fail sight. Disadv on attacks.</li>
+            </ul>
+        </div>
+
+        <!-- Column 5: Death & Stabilization -->
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #444; padding-bottom: 5px;">Death & Stabilizing</h4>
+            <ul style="list-style: none; padding: 0; font-size: 0.9em; line-height: 1.8;">
+                <li><b>Death Save:</b> 10+ Success; 9- Failure.</li>
+                <li><b>Critical Success (20):</b> Regain 1 HP.</li>
+                <li><b>Critical Failure (1):</b> Counts as 2 failures.</li>
+                <li><b>Stabilizing:</b> DC 10 Medicine check.</li>
+                <li><b>Stable:</b> 0 HP; regains 1 HP in 1d4 hours.</li>
+                <li><b>Instant Death:</b> Massive dmg exceeds HP max.</li>
+            </ul>
+        </div>
     </div>
-	
-	<!-- Column 4: Vision & Light -->
-    <div style="flex: 1; min-width: 250px;">
-        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Vision & Light</h4>
-        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
-            <li><b>Bright Light:</b> Normal vision for most creatures.</li>
-            <li><b>Dim Light:</b> Area is <b>Lightly Obscured</b>.</li>
-            <li><b>Darkness:</b> Area is <b>Heavily Obscured</b>.</li>
-            <li><b>Lightly Obscured:</b> Disadv. on WIS (Perception) checks.</li>
-            <li><b>Heavily Obscured:</b> Creatures effectively have <b>Blinded</b> condition.</li>
-        </ul>
-    </div>
-	
-	<!-- Column 5: Death & Stabilization -->
-    <div style="flex: 1; min-width: 250px;">
-        <h4 style="margin-top: 0; color: #d4af37; border-bottom: 1px solid #d4af37; padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Death & Stabilizing</h4>
-        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8;">
-            <li><b>Death Save:</b> 10+ is success; 9 or less is failure.</li>
-            <li><b>Critical Success:</b> Rolling a 20 grants 1 HP immediately.</li>
-            <li><b>Critical Failure:</b> Rolling a 1 counts as 2 failures.</li>
-            <li><b>Stabilizing:</b> DC 10 WIS (Medicine) check as an action.</li>
-            <li><b>Stable:</b> 0 HP but no more saves; regains 1 HP in 1d4 hours.</li>
-            <li><b>Instant Death:</b> Damage exceeds HP max by your total HP max.</li>
-        </ul>
-    </div>
-</div>
+</details>
+
+
     <input type="text" id="searchInput" class="search-box" placeholder="Search weapons, conditions, or other rules...">
 
     <div id="glossaryContainer"></div>
@@ -209,40 +218,44 @@
             { "term": "Total Cover", "category": "Cover", "description": "Cannot be targeted directly by attacks or spells.", "id": "mechanic_cover_total" },
 			
 			// Weapons
-            // Simple Melee
-			{ "term": "Greatclub", "category": "Simple Melee", "description": "1d8 Bludgeoning. Properties: 2-handed. Mastery: Push.", "id": "weapon_greatclub" },
-			{ "term": "Javelin", "category": "Simple Melee", "description": "1d6 Piercing. Properties: Thrown (30/120). Mastery: Slow.", "id": "weapon_javelin" },
-			{ "term": "Light Hammer", "category": "Simple Melee", "description": "1d4 Bludgeoning. Properties: Light, Thrown (20/60). Mastery: Nick.", "id": "weapon_light_hammer" },
-			{ "term": "Mace", "category": "Simple Melee", "description": "1d6 Bludgeoning. Mastery: Sap.", "id": "weapon_mace" },
-			{ "term": "Sickle", "category": "Simple Melee", "description": "1d4 Slashing. Properties: Light. Mastery: Nick.", "id": "weapon_sickle" },
-			{ "term": "Spear", "category": "Simple Melee", "description": "1d6 Piercing. Properties: Thrown (20/60), Versatile (1d8). Mastery: Sap.", "id": "weapon_spear" },
+			// Weapons - Simple Melee
+			{ "term": "Greatclub", "category": "Weapons - Simple Melee", "description": "1d8 Bludgeoning. Properties: 2-handed. Mastery: Push.", "id": "weapon_greatclub" },
+			{ "term": "Javelin", "category": "Weapons - Simple Melee", "description": "1d6 Piercing. Properties: Thrown (30/120). Mastery: Slow.", "id": "weapon_javelin" },
+			{ "term": "Light Hammer", "category": "Weapons - Simple Melee", "description": "1d4 Bludgeoning. Properties: Light, Thrown (20/60). Mastery: Nick.", "id": "weapon_light_hammer" },
+			{ "term": "Mace", "category": "Weapons - Simple Melee", "description": "1d6 Bludgeoning. Mastery: Sap.", "id": "weapon_mace" },
+			{ "term": "Sickle", "category": "Weapons - Simple Melee", "description": "1d4 Slashing. Properties: Light. Mastery: Nick.", "id": "weapon_sickle" },
+			{ "term": "Spear", "category": "Weapons - Simple Melee", "description": "1d6 Piercing. Properties: Thrown (20/60), Versatile (1d8). Mastery: Sap.", "id": "weapon_spear" },
 
-			// Simple Ranged
-			{ "term": "Light Crossbow", "category": "Simple Ranged", "description": "1d8 Piercing. Properties: Ammunition (80/320), Loading, 2-handed. Mastery: Slow.", "id": "weapon_light_crossbow" },
-			{ "term": "Sling", "category": "Simple Ranged", "description": "1d4 Bludgeoning. Properties: Ammunition (30/120). Mastery: Slow.", "id": "weapon_sling" },
+			// Weapons - Simple Ranged
+			{ "term": "Light Crossbow", "category": "Weapons - Simple Ranged", "description": "1d8 Piercing. Properties: Ammunition (80/320), Loading, 2-handed. Mastery: Slow.", "id": "weapon_light_crossbow" },
+			{ "term": "Sling", "category": "Weapons - Simple Ranged", "description": "1d4 Bludgeoning. Properties: Ammunition (30/120). Mastery: Slow.", "id": "weapon_sling" },
 
-			// Martial Melee
-			{ "term": "Flail", "category": "Martial Melee", "description": "1d8 Bludgeoning. Mastery: Sap.", "id": "weapon_flail" },
-			{ "term": "Glaive", "category": "Martial Melee", "description": "1d10 Slashing. Properties: Heavy, Reach, 2-handed. Mastery: Graze.", "id": "weapon_glaive" },
-			{ "term": "Halberd", "category": "Martial Melee", "description": "1d10 Slashing. Properties: Heavy, Reach, 2-handed. Mastery: Cleave.", "id": "weapon_halberd" },
-			{ "term": "Lance", "category": "Martial Melee", "description": "1d10 Piercing. Properties: Heavy, Reach, 2-handed (unless mounted). Mastery: Topple.", "id": "weapon_lance" },
-			{ "term": "Maul", "category": "Martial Melee", "description": "2d6 Bludgeoning. Properties: Heavy, 2-handed. Mastery: Topple.", "id": "weapon_maul" },
-			{ "term": "Morningstar", "category": "Martial Melee", "description": "1d8 Piercing. Mastery: Sap.", "id": "weapon_morningstar" },
-			{ "term": "Pike", "category": "Martial Melee", "description": "1d10 Piercing. Properties: Heavy, Reach, 2-handed. Mastery: Push.", "id": "weapon_pike" },
-			{ "term": "Scimitar", "category": "Martial Melee", "description": "1d6 Slashing. Properties: Finesse, Light. Mastery: Nick.", "id": "weapon_scimitar" },
-			{ "term": "Shortsword", "category": "Martial Melee", "description": "1d6 Piercing. Properties: Finesse, Light. Mastery: Vex.", "id": "weapon_shortsword" },
-			{ "term": "Trident", "category": "Martial Melee", "description": "1d8 Piercing. Properties: Thrown (20/60), Versatile (1d10). Mastery: Topple.", "id": "weapon_trident" },
-			{ "term": "Warhammer", "category": "Martial Melee", "description": "1d8 Bludgeoning. Properties: Versatile (1d10). Mastery: Push.", "id": "weapon_warhammer" },
-			{ "term": "War Pick", "category": "Martial Melee", "description": "1d8 Piercing. Properties: Versatile (1d10). Mastery: Sap.", "id": "weapon_war_pick" },
-			{ "term": "Whip", "category": "Martial Melee", "description": "1d4 Slashing. Properties: Finesse, Reach. Mastery: Slow.", "id": "weapon_whip" },
+			// Weapons - Martial Melee
+			{ "term": "Battleaxe", "category": "Weapons - Martial Melee", "description": "1d8 Slashing. Versatile (1d10). Mastery: Topple. 4lb, 10gp.", "id": "wep_battleaxe" },
+			{ "term": "Flail", "category": "Weapons - Martial Melee", "description": "1d8 Bludgeoning. Mastery: Sap. 2lb, 10gp.", "id": "wep_flail" },
+			{ "term": "Glaive", "category": "Weapons - Martial Melee", "description": "1d10 Slashing. Heavy, Reach, Two-Handed. Mastery: Graze. 6lb, 20gp.", "id": "wep_glaive" },
+			{ "term": "Greataxe", "category": "Weapons - Martial Melee", "description": "1d12 Slashing. Heavy, Two-Handed. Mastery: Cleave. 7lb, 30gp.", "id": "wep_greataxe" },
+			{ "term": "Greatsword", "category": "Weapons - Martial Melee", "description": "2d6 Slashing. Heavy, Two-Handed. Mastery: Graze. 6lb, 50gp.", "id": "wep_greatsword" },
+			{ "term": "Halberd", "category": "Weapons - Martial Melee", "description": "1d10 Slashing. Heavy, Reach, Two-Handed. Mastery: Cleave. 6lb, 20gp.", "id": "wep_halberd" },
+			{ "term": "Lance", "category": "Weapons - Martial Melee", "description": "1d10 Piercing. Heavy, Reach, Two-Handed (unless mounted). Mastery: Topple. 6lb, 10gp.", "id": "wep_lance" },
+			{ "term": "Longsword", "category": "Weapons - Martial Melee", "description": "1d8 Slashing. Versatile (1d10). Mastery: Sap. 3lb, 15gp.", "id": "wep_longsword" },
+			{ "term": "Maul", "category": "Weapons - Martial Melee", "description": "2d6 Bludgeoning. Heavy, Two-Handed. Mastery: Topple. 10lb, 10gp.", "id": "wep_maul" },
+			{ "term": "Morningstar", "category": "Weapons - Martial Melee", "description": "1d8 Piercing. Mastery: Sap. 4lb, 15gp.", "id": "wep_morningstar" },
+			{ "term": "Pike", "category": "Weapons - Martial Melee", "description": "1d10 Piercing. Heavy, Reach, Two-Handed. Mastery: Push. 18lb, 5gp.", "id": "wep_pike" },
+			{ "term": "Rapier", "category": "Weapons - Martial Melee", "description": "1d8 Piercing. Finesse. Mastery: Vex. 2lb, 25gp.", "id": "wep_rapier" },
+			{ "term": "Scimitar", "category": "Weapons - Martial Melee", "description": "1d6 Slashing. Finesse, Light. Mastery: Nick. 3lb, 25gp.", "id": "wep_scimitar" },
+			{ "term": "Shortsword", "category": "Weapons - Martial Melee", "description": "1d6 Piercing. Finesse, Light. Mastery: Vex. 2lb, 10gp.", "id": "wep_shortsword" },
+			{ "term": "Trident", "category": "Weapons - Martial Melee", "description": "1d8 Piercing. Thrown (20/60), Versatile (1d10). Mastery: Topple. 4lb, 5gp.", "id": "wep_trident" },
+			{ "term": "Warhammer", "category": "Weapons - Martial Melee", "description": "1d8 Bludgeoning. Versatile (1d10). Mastery: Push. 5lb, 15gp.", "id": "wep_warhammer" },
+			{ "term": "War Pick", "category": "Weapons - Martial Melee", "description": "1d8 Piercing. Versatile (1d10). Mastery: Sap. 2lb, 5gp.", "id": "wep_warpick" },
+			{ "term": "Whip", "category": "Weapons - Martial Melee", "description": "1d4 Slashing. Finesse, Reach. Mastery: Slow. 3lb, 2gp.", "id": "wep_whip" },
 
-			// Martial Ranged
-			{ "term": "Blowgun", "category": "Martial Ranged", "description": "1 Piercing. Properties: Ammunition (25/100), Loading. Mastery: Vex.", "id": "weapon_blowgun" },
-			{ "term": "Hand Crossbow", "category": "Martial Ranged", "description": "1d6 Piercing. Properties: Ammunition (30/120), Light, Loading. Mastery: Vex.", "id": "weapon_hand_crossbow" },
-			{ "term": "Heavy Crossbow", "category": "Martial Ranged", "description": "1d10 Piercing. Properties: Ammunition (100/400), Heavy, Loading, 2-handed. Mastery: Push.", "id": "weapon_heavy_crossbow" },
-			{ "term": "Longbow", "category": "Martial Ranged", "description": "1d8 Piercing. Properties: Ammunition (150/600), Heavy, 2-handed. Mastery: Slow.", "id": "weapon_longbow" },
-			{ "term": "Pistol", "category": "Martial Ranged", "description": "1d10 Piercing. Properties: Ammunition (30/90), Loading. Mastery: Vex.", "id": "weapon_pistol" },
-			
+			// Weapons - Martial Ranged
+			{ "term": "Blowgun", "category": "Weapons - Martial Ranged", "description": "1 Piercing. Properties: Ammunition (25/100), Loading. Mastery: Vex.", "id": "weapon_blowgun" },
+			{ "term": "Hand Crossbow", "category": "Weapons - Martial Ranged", "description": "1d6 Piercing. Properties: Ammunition (30/120), Light, Loading. Mastery: Vex.", "id": "weapon_hand_crossbow" },
+			{ "term": "Heavy Crossbow", "category": "Weapons - Martial Ranged", "description": "1d10 Piercing. Properties: Ammunition (100/400), Heavy, Loading, 2-handed. Mastery: Push.", "id": "weapon_heavy_crossbow" },
+			{ "term": "Longbow", "category": "Weapons - Martial Ranged", "description": "1d8 Piercing. Properties: Ammunition (150/600), Heavy, 2-handed. Mastery: Slow.", "id": "weapon_longbow" },
+			{ "term": "Pistol", "category": "Weapons - Martial Ranged", "description": "1d10 Piercing. Properties: Ammunition (30/90), Loading. Mastery: Vex.", "id": "weapon_pistol" },
 			//Light Sources
 			{ "term": "Candle", "category": "Light Sources", "description": "1 hr. Bright Light 5ft radius, Dim Light +5ft.", "id": "light_candle" },
 			{ "term": "Lamp", "category": "Light Sources", "description": "6 hrs. Bright Light 15ft radius, Dim Light +15ft.", "id": "light_lamp" },
@@ -263,39 +276,89 @@
         ];
 
         const container = document.getElementById('glossaryContainer');
-        const searchInput = document.getElementById('searchInput');
+		const searchInput = document.getElementById('searchInput');
 
-        function render(items) {
-            const groups = items.reduce((acc, item) => {
-                if (!acc[item.category]) acc[item.category] = [];
-                acc[item.category].push(item);
-                return acc;
-            }, {});
+		function render(items, isSearching = false) {
+			const groups = items.reduce((acc, item) => {
+				if (!acc[item.category]) acc[item.category] = [];
+				acc[item.category].push(item);
+				return acc;
+			}, {});
 
-            container.innerHTML = Object.keys(groups).map(category => `
-                <details  class="category-section">
-                    <summary>${category}</summary>
-                    ${groups[category].map(item => `
-                        <div class="card">
-                            <p class="term">${item.term}</p>
-                            <div class="desc">${item.description}</div>
-                        </div>
-                    `).join('')}
-                </details>
-            `).join('');
-        }
+			container.innerHTML = Object.keys(groups).map(category => `
+				<details class="category-section" ${isSearching ? 'open' : ''}>
+					<summary style="cursor: pointer; color: #d4af37; font-weight: bold; padding: 10px; background: #1a1a1a; border: 1px solid #333; border-radius: 5px; margin-bottom: 5px;">
+						${category} (${groups[category].length})
+					</summary>
+					${groups[category].map(item => `
+						<div class="card" style="padding: 10px; border-bottom: 1px solid #222;">
+							<p class="term" style="margin: 0; color: #fff; font-weight: bold;">${item.term}</p>
+							<div class="desc" style="color: #ccc; font-size: 0.9em;">${item.description}</div>
+						</div>
+					`).join('')}
+				</details>
+			`).join('');
+		}
 
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            const filtered = data.filter(item => 
-                item.term.toLowerCase().includes(term) || 
-                item.category.toLowerCase().includes(term) ||
-                item.description.toLowerCase().includes(term)
-            );
-            render(filtered);
-        });
+		searchInput.addEventListener('input', (e) => {
+			const term = e.target.value.toLowerCase();
+			const filtered = data.filter(item => 
+				item.term.toLowerCase().includes(term) || 
+				item.category.toLowerCase().includes(term) ||
+				item.description.toLowerCase().includes(term)
+			);
+			
+			// If term is not empty, we tell render() to open the drawers
+			render(filtered, term.length > 0);
+		});
 
-        render(data);
+		// Initial load (drawers closed by default)
+		render(data, false);
     </script>
+	
+	<!-- Drawer 2: Precise Minion Table -->
+<details style="max-width: 1400px; margin: 10px auto; background: #1a1a1a; border: 1px solid #d4af37; border-radius: 8px; color: #e0e0e0; font-family: sans-serif;">
+    <summary style="padding: 15px; cursor: pointer; color: #d4af37; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; outline: none;">
+        + Precise Minion Table (CR 1/2 - 30)
+    </summary>
+    <div style="padding: 0 15px 15px 15px; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 0.85em;">
+            <thead>
+                <tr style="border-bottom: 2px solid #d4af37; color: #d4af37;">
+                    <th style="padding: 10px;">Minion CR</th>
+                    <th style="padding: 10px;">Hit Points</th>
+                    <th style="padding: 10px;">Damage</th>
+                    <th style="padding: 10px;">Minions Per Standard</th>
+                </tr>
+            </thead>
+            <tbody id="minionBody">
+                <!-- Generating rows via script for cleanliness -->
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<script>
+    // Precise Minion Data from your table
+    const minionData = [
+        ["1/2", "≤7", "1", "5"], ["1", "8", "1", "5"], ["2", "9", "2", "5"], ["3", "10", "3", "5"], ["4", "11", "4", "5"],
+        ["5", "12", "4", "8"], ["6", "13", "4", "8"], ["7", "14", "4", "8"], ["8", "15", "5", "8"], ["9", "16", "5", "10"],
+        ["10", "17", "5", "10"], ["11", "18", "6", "10"], ["12", "19", "6", "10"], ["13", "20", "7", "10"], ["14", "21", "7", "10"],
+        ["15", "22", "8", "10"], ["16", "23", "8", "10"], ["17", "24", "9", "10"], ["18", "25", "9", "10"], ["19", "26", "10", "10"],
+        ["20", "27", "10", "10"], ["21", "28", "11", "10"], ["22", "29", "11", "10"], ["23", "30", "12", "10"], ["24", "31", "12", "10"],
+        ["25", "32", "13", "10"], ["26", "33", "13", "10"], ["27", "34", "14", "10"], ["28", "35", "14", "10"], ["29", "36", "15", "10"], ["30", "37", "15", "10"]
+    ];
+
+    const minionBody = document.getElementById('minionBody');
+    minionBody.innerHTML = minionData.map((row, index) => `
+        <tr style="border-bottom: 1px solid #333; ${index % 2 === 0 ? '' : 'background: #222;'}">
+            <td style="padding: 8px;"><b>${row[0]}</b></td>
+            <td style="padding: 8px;">${row[1]}</td>
+            <td style="padding: 8px;">${row[2]}</td>
+            <td style="padding: 8px;">${row[3]}</td>
+        </tr>
+    `).join('');
+</script>
+<div style="height: 50px;"></div>
 </body>
 </html>
